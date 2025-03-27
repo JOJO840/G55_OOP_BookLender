@@ -9,27 +9,35 @@ public class App {
 
 
 //        // Initialize and display Book & Person instances
-        Person person1 = new Person("John", "Doe");
-//        Person person2 = new Person("Test", "Testsson");
-//
-//
-//        Book book1 = new Book("Apan", "författare1");
-//        Book book2 = new Book("hajen", "författare2");
-//        Book book3 = new Book("Tigern", "författare3");
-//
-//
-//        System.out.println(person1.getFirstName() + " " + person1.getLastName());
-//        // Simulate borrowing a book
-//        // Simulate returning a book
+        Person person1 = new Person("Josip", "Jovanovic");
+        Person person2 = new Person("Gentrit", "Hoti");
 
+        Book book1 = new Book("Apan", "Disney");
+        // person2 loans book through constructor
+        Book book2 = new Book("hajen", "Disney", person2);
+        Book book3 = new Book("Tiger", "Disney", person2);
+        System.out.println(book1.getBookInformation());
+        System.out.println(book2.getBookInformation());
+        System.out.println(book3.getBookInformation());
 
-        Person gentrit = new Person("Gentrit", "Hoti");
-        Book gentritBook = new Book("Test", "Author");
+        System.out.println("is book1 available: " + book1.isAvailable());
+        System.out.println("is book2 available: " + book2.isAvailable());
+        System.out.println("is book3 available: " + book2.isAvailable());
+        //person1 loans book through instance
+        person1.loanBook(book1);
+        // check book availability
+        System.out.println("is book1 available: " + book1.isAvailable());
 
-        gentrit.loanBook(gentritBook);
-
-        System.out.println(gentritBook.isAvailable());
+        System.out.println(book1.getBorrower()); //get name of borrower
         System.out.println();
+        System.out.println(book2.getBorrower()); //get name of borrower
+        System.out.println();
+
+        System.out.println(book3.getBorrower()); //get name of borrower
+
+        //person1.returnBook(book1);
+        System.out.println("is book1 available: " + book1.isAvailable());
+
     }
 
 }

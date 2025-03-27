@@ -10,22 +10,32 @@ public class Book {
     private String id;
     private String title;
     private String author;
-    private boolean available = true;
+    private boolean available;
     private Person borrower;
 
     public Book(String title, String author) {
         setTitle(title);
-        setTitle(author);
+        setAuthor(author);
+        setAvailable(true);
+        id = "B" + (1000 + (int)(Math.random() * 9000));
     }
 
     public Book(String title, String author, Person borrower) {
         setTitle(title);
-        setTitle(author);
+        setAuthor(author);
         setBorrower(borrower);
-
+        setAvailable(false);
+        id = "B" + (1000 + (int)(Math.random() * 9000));
 
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -52,15 +62,17 @@ public class Book {
     }
 
     public void setBorrower(Person borrower) {
-        setAvailable(false);
         this.borrower = borrower;
     }
 
-    public Person getBorrower() {
-        return borrower;
+    public String getBorrower() {
+        return "Borrower: " + borrower.getPersonInformation() + "\n Book borrowed: " + getBookInformation();
+
     }
 
     public String getBookInformation() {
-        return "Text to return ";
+        return "Author: " + "\t" + getAuthor() + "\t " +
+                "Title: " + getTitle() + "\t" +
+                "\t" + "Book ID: " + getId();
     }
 }

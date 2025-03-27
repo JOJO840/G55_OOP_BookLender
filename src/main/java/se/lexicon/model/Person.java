@@ -44,7 +44,9 @@ public class Person {
     public void loanBook(Book book) {
         if (book.isAvailable()) {
             book.setBorrower(this);
+            book.setAvailable(false);
         } else {
+            System.out.println(book.getBorrower());
             System.out.println("Book is not available");
         }
     }
@@ -52,10 +54,11 @@ public class Person {
     public void returnBook(Book book) {
         book.setAvailable(true);
         book.setBorrower(null);
+        System.out.println("book has been returned by " + getPersonInformation());
 
     }
 
     public String getPersonInformation() {
-        return "Text to return ";
+        return "ID: " + getId() + "\t FirstName: " + getFirstName()+ "\t Lastname: " + getLastName();
     }
 }
