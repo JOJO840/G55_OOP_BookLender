@@ -10,7 +10,7 @@ public class Book {
     private String id;
     private String title;
     private String author;
-    private boolean available;
+    private boolean available = true;
     private Person borrower;
 
     public Book(String title, String author) {
@@ -22,6 +22,8 @@ public class Book {
         setTitle(title);
         setTitle(author);
         setBorrower(borrower);
+
+
     }
 
 

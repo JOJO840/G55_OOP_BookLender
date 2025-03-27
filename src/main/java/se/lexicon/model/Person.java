@@ -46,7 +46,6 @@ public class Person {
             book.setBorrower(this);
         } else {
             System.out.println("Book is not available");
-            throw new IllegalArgumentException();
         }
     }
 
