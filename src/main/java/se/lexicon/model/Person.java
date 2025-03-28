@@ -46,8 +46,7 @@ public class Person {
             book.setBorrower(this);
             book.setAvailable(false);
         } else {
-            System.out.println(book.getBorrower());
-            System.out.println("Book is not available");
+            System.out.println("Book: " + book.getBookInformation() +  "\t is not available, currently borrowed by: " + book.getBorrower());
         }
     }
 
@@ -59,6 +58,6 @@ public class Person {
     }
 
     public String getPersonInformation() {
-        return "ID: " + getId() + "\t FirstName: " + getFirstName()+ "\t Lastname: " + getLastName();
+        return "FirstName: " + getFirstName()+ "\t Lastname: " + getLastName() + " \t ID: " + getId();
     }
 }
